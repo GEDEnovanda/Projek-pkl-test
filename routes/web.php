@@ -9,6 +9,9 @@ Route::get('/', function () {
 Route::get('/backoffice', function () {
     return view('backoffice');
 });
+Route::get('/beranda', function () {
+    return view('beranda');
+});
 Route::get('/Users',[UserController::class,'loadAllUsers']);
 Route::get('/add/user',[UserController::class,'loadaddUserForm']);
 Route::post('/add-user', [UserController::class, 'store'])->name('AddUser');
