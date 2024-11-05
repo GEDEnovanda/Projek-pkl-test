@@ -12,6 +12,9 @@ Route::get('/backoffice', function () {
 Route::get('/beranda', function () {
     return view('beranda');
 });
+Route::get('/coba', function () {
+    return view('coba');
+});
 Route::get('/Users',[UserController::class,'loadAllUsers']);
 Route::get('/add/user',[UserController::class,'loadaddUserForm']);
 Route::post('/add-user', [UserController::class, 'store'])->name('AddUser');
