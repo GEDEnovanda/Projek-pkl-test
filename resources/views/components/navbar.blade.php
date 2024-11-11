@@ -1,8 +1,8 @@
-<nav class="fixed top-0 left-0 w-full  z-50">
+<nav class="fixed top-0 left-0 w-full z-50">
   <div x-data="{ isOpen: false }" class="flex items-center justify-between py-0 px-6 lg:px-12 max-h-16 bg-navcol trans" aria-label="Global">
     
     <!-- Logo -->
-    <div class="flex-1 ml-2"> <!-- Menambahkan margin kiri pada logo -->
+    <div class="flex-1 ml-14"> <!-- Menambahkan margin kiri pada logo -->
       <a href="#" class="-m-1.5 p-1.5">
         <img class="h-10 w-10" src="{{ asset('img/logoyag.png') }}" alt="Logo">
       </a>
@@ -10,9 +10,11 @@
 
     <!-- Menu items -->
     <div class="hidden lg:flex lg:gap-x-10">
-      <a href="#beranda" class="text-sm font-semibold text-red-900">Beranda</a>
-      <a href="#About" class="text-sm font-semibold text-primary">Tentang kami</a>
-      
+      <a href="#beranda" class="text-sm font-semibold text-red-900 relative hover:scale-105 hover:text-primary transition duration-200 after:block after:absolute after:left-0 after:right-0 after:bottom-[-4px] after:h-1 after:bg-primary after:scale-x-0 hover:after:scale-x-100 hover:after:transition-transform">Beranda</a>
+      <a href="#About" class="text-sm font-semibold text-primary relative hover:scale-105 hover:text-primary transition duration-200 after:block after:absolute after:left-0 after:right-0 after:bottom-[-4px] after:h-1 after:bg-primary after:scale-x-0 hover:after:scale-x-100 hover:after:transition-transform">Tentang kami</a>
+      <a href="#" class="text-sm font-semibold text-red-900 relative hover:scale-105 hover:text-primary transition duration-200 after:block after:absolute after:left-0 after:right-0 after:bottom-[-4px] after:h-1 after:bg-primary after:scale-x-0 hover:after:scale-x-100 hover:after:transition-transform">Berita</a>
+      <a href="#anggota" class="text-sm font-semibold text-red-900 relative hover:scale-105 hover:text-primary transition duration-200 after:block after:absolute after:left-0 after:right-0 after:bottom-[-4px] after:h-1 after:bg-primary after:scale-x-0 hover:after:scale-x-100 hover:after:transition-transform">Anggota</a>
+
       <div class="relative" x-data="{ isOpen: false }" @click.away="isOpen = false">
         <button type="button" @click="isOpen = !isOpen" class="flex items-center gap-x-1 text-sm font-semibold text-primary" aria-expanded="false">
           Daftar
@@ -47,14 +49,11 @@
           </div>
         </div>
       </div>
-
-      <a href="#anggota" class="text-sm font-semibold text-red-900">Anggota</a>
-      <a href="#" class="text-sm font-semibold text-red-900">Berita</a>
     </div>
 
     <!-- Login button -->
     <div class="hidden lg:flex lg:flex-1 lg:justify-end mr-14">
-      <a href="#" class="block rounded-lg px-5 py-1 text-base/7 font-semibold text-white hover:bg-opacity-90 bg-red-900">Log in</a>
+      <a href="#" class="block rounded-lg px-5 py-1 text-base font-semibold text-primary border border-primary transition duration-200 transform hover:scale-105 hover:bg-primary hover:text-white">Kontol</a>
     </div>
   </div>
 </nav>
