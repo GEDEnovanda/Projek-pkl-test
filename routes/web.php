@@ -4,14 +4,12 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('beranda');
 });
 Route::get('/backoffice', function () {
     return view('backoffice');
 });
-Route::get('/beranda', function () {
-    return view('beranda');
-});
+
 Route::get('/coba', function () {
     return view('coba');
 });
