@@ -16,5 +16,6 @@ Route::get('/coba', function () {
     return view('coba');
 });
 Route::get('/Users',[UserController::class,'loadAllUsers']);
+Route::get('/backoffice', [UserController::class, 'loadAllbackoffice']);
 Route::get('/add/user',[UserController::class,'loadaddUserForm']);
 Route::post('/add-user', [UserController::class, 'store'])->name('AddUser');

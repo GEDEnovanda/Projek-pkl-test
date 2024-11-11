@@ -15,6 +15,10 @@ class UserController extends Controller
         $all_Users= User::all();
         return view('Users',compact('all_Users'));
     }
+    public function loadAllbackoffice(){
+        $all_Users= User::all();
+        return view('backoffice',compact('all_Users'));
+    }
 
     public function loadaddUserForm(){
         return view('add-user');
