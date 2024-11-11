@@ -16,15 +16,16 @@
     <div class="mx-auto py-32 sm:py-48 lg:py-56 mt-20">
       <div class="text-center">
         <h1 class="text-balance text-6xl shadow-md drop-shadow-sm  font-semibold tracking-tight text-white ">YAYASAN GUNA WIDYA PRAMESTI</h1>
-          <div class="flex flex-row justify-center space-x-7 mt-11">
-              <div class="mt-10  items-center justify-center gap-x-6">
-                <a href="#" class=" rounded-md bg-primary px-7 py-4 text-base font-semibold text-white shadow-sm hover:bg-opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ">DONASI</a>
-              </div>
-              <div class="mt-10 items-center justify-center gap-x-6">
-                <a href="#" class=" rounded-md bg-primary px-7 py-4 text-base font-semibold text-white shadow-sm hover:bg-opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ">DONASI</a>
-              </div>
+        <div class="flex flex-row justify-center space-x-7 mt-11">
+          <div class="mt-10 w-56">
+            <a href="#" class="rounded-md bg-primary px-7 py-4 text-base font-semibold text-white shadow-sm hover: hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 block text-center">DONASI</a>
           </div>
-
+          <div class="mt-10 w-56">
+            <a href="#" class="rounded-md bg-primary bg-opacity-65 px-7 py-4 text-base font-semibold text-white shadow-sm hover:bg-opacity-100 hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 block text-center">Lebih Lanjut -></a>
+          </div>
+        </div>
+        
+        
       </div>
       
     </div>

@@ -1,10 +1,10 @@
-<nav class="fixed top-0 left-0 w-full z-50">
-  <div x-data="{ isOpen: false }" class="flex items-center justify-between py-1 px-6 lg:px-12 bg-navcol" aria-label="Global">
+<nav class="fixed top-0 left-0 w-full  z-50">
+  <div x-data="{ isOpen: false }" class="flex items-center justify-between py-0 px-6 lg:px-12 max-h-16 bg-navcol trans" aria-label="Global">
     
     <!-- Logo -->
-    <div class="flex-1">
+    <div class="flex-1 ml-2"> <!-- Menambahkan margin kiri pada logo -->
       <a href="#" class="-m-1.5 p-1.5">
-        <img class="h-8 w-8" src="{{ asset('img/logoyag.png') }}" alt="Logo">
+        <img class="h-10 w-10" src="{{ asset('img/logoyag.png') }}" alt="Logo">
       </a>
     </div>
 
@@ -49,7 +49,7 @@
       </div>
 
       <a href="#anggota" class="text-sm font-semibold text-red-900">Anggota</a>
-      <a href="#" class="text-sm font-semibold text-red-900">Lembaga</a>
+      <a href="#" class="text-sm font-semibold text-red-900">Berita</a>
     </div>
 
     <!-- Login button -->
