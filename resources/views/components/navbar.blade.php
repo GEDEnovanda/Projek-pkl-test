@@ -1,4 +1,4 @@
-<nav class="fixed top-0 left-0 w-full z-50">
+<nav class="fixed top-0 left-0 w-full z-50 shadow-xl"> <!-- Menambahkan shadow-xl untuk efek timbul -->
   <div x-data="{ isOpen: false }" class="flex items-center justify-between py-0 px-6 lg:px-12 max-h-16 bg-navcol trans" aria-label="Global">
     
     <!-- Logo -->
@@ -10,9 +10,9 @@
 
     <!-- Menu items -->
     <div class="hidden lg:flex lg:gap-x-10">
-      <a href="#beranda" class="text-sm font-semibold text-red-900 relative hover:scale-105 hover:text-primary transition duration-200 after:block after:absolute after:left-0 after:right-0 after:bottom-[-4px] after:h-1 after:bg-primary after:scale-x-0 hover:after:scale-x-100 hover:after:transition-transform">Beranda</a>
-      <a href="#About" class="text-sm font-semibold text-primary relative hover:scale-105 hover:text-primary transition duration-200 after:block after:absolute after:left-0 after:right-0 after:bottom-[-4px] after:h-1 after:bg-primary after:scale-x-0 hover:after:scale-x-100 hover:after:transition-transform">Tentang kami</a>
-      <a href="#" class="text-sm font-semibold text-red-900 relative hover:scale-105 hover:text-primary transition duration-200 after:block after:absolute after:left-0 after:right-0 after:bottom-[-4px] after:h-1 after:bg-primary after:scale-x-0 hover:after:scale-x-100 hover:after:transition-transform">Berita</a>
+      <a href="beranda" class="text-sm font-semibold text-red-900 relative hover:scale-105 hover:text-primary transition duration-200 after:block after:absolute after:left-0 after:right-0 after:bottom-[-4px] after:h-1 after:bg-primary after:scale-x-0 hover:after:scale-x-100 hover:after:transition-transform">Beranda</a>
+      <a href="{{ url('/beranda#Galeri') }}" class="text-sm font-semibold text-primary relative hover:scale-105 hover:text-primary transition duration-200 after:block after:absolute after:left-0 after:right-0 after:bottom-[-4px] after:h-1 after:bg-primary after:scale-x-0 hover:after:scale-x-100 hover:after:transition-transform">Galeri Kami</a>
+      <a href="{{ url('/beranda#berita') }}" class="text-sm font-semibold text-red-900 relative hover:scale-105 hover:text-primary transition duration-200 after:block after:absolute after:left-0 after:right-0 after:bottom-[-4px] after:h-1 after:bg-primary after:scale-x-0 hover:after:scale-x-100 hover:after:transition-transform">Berita</a>
       <a href="#anggota" class="text-sm font-semibold text-red-900 relative hover:scale-105 hover:text-primary transition duration-200 after:block after:absolute after:left-0 after:right-0 after:bottom-[-4px] after:h-1 after:bg-primary after:scale-x-0 hover:after:scale-x-100 hover:after:transition-transform">Anggota</a>
 
       <div class="relative" x-data="{ isOpen: false }" @click.away="isOpen = false">
@@ -53,7 +53,7 @@
 
     <!-- Login button -->
     <div class="hidden lg:flex lg:flex-1 lg:justify-end mr-14">
-      <a href="#" class="block rounded-lg px-5 py-1 text-base font-semibold text-primary border border-primary transition duration-200 transform hover:scale-105 hover:bg-primary hover:text-white">Kontol</a>
+      <a href="#" class="block rounded-lg px-5 py-1 text-base font-semibold text-primary border border-primary transition duration-200 transform hover:scale-105 hover:bg-primary hover:text-white">Masuk</a>
     </div>
   </div>
 </nav>
