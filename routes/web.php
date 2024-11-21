@@ -8,12 +8,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('beranda');
 });
+Route::get('/beranda', function () {
+    return view('beranda');
+});
 Route::get('/backoffice', function () {
     return view('backoffice');
 });
-
 Route::get('/coba', function () {
     return view('coba');
+})->name('coba');
+Route::get('/tentang', function () {
+    return view('tentang');
 });
 Route::get('/Users',[UserController::class,'loadAllUsers']);
 Route::get('/backoffice', [UserController::class, 'loadAllbackoffice']);
