@@ -53,7 +53,7 @@
 
     <!-- Login button -->
     <div class="hidden lg:flex lg:flex-1 lg:justify-end mr-14">
-      <a href="#" class="block rounded-lg px-5 py-1 text-base font-semibold text-primary border border-primary transition duration-200 transform hover:scale-105 hover:bg-primary hover:text-white">Kontol</a>
+      <a href="#" class="block rounded-lg px-5 py-1 text-base font-semibold text-primary border border-primary transition duration-200 transform hover:scale-105 hover:bg-primary hover:text-white">LOGIN</a>
     </div>
   </div>
 </nav>
