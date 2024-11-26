@@ -57,3 +57,9 @@
     </div>
   </div>
 </nav>
+{{-- buat kolom search kegiatan/berita dan anggota, ganti peserta didik menjadi anak asuh,pendidik di ganti dengan pengasuh,tambah relawan, daftar donatur bisa individu atau lembaga,berita di per singkat  --}}
+
+{{-- flow donasi:pilih jenis donasi (dana,barang dan jasa) -> isi form (tiap form berbeda), form dana(),form barang(),form jasa(), --}}
+{{-- daftar () --}}
+
+{{-- guest=donasi () --}}

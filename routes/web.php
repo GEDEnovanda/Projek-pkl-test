@@ -29,3 +29,10 @@ Route::get('/products/image/{filename}', [ProductController::class, 'showImage']
 Route::resource('/Galeris', \App\Http\Controllers\GaleriController::class);
 Route::get('/Galeris/image/{filename}', [GaleriController::class, 'showImage'])->name('Galeris.image');
 
+use App\Http\Controllers\DonorController;
+
+Route::get('/donation-form', [DonorController::class, 'showForm'])->name('donation.form');
+Route::post('/donation-form', [DonorController::class, 'submitForm'])->name('donation.submit');
+Route::get('/donation-form', function () {
+    return view('donation-form');
+});

@@ -20,12 +20,15 @@
 
   <div class="text-left pl-14 z-10"> <!-- Padding kiri dikurangi -->
     <h1 class="text-6xl font-semibold text-white leading-tight max-w-4xl">
-      YAYASAN GUNA WIDYA PRAMESTI
+      YAYASAN 
+    </h1>
+    <h1 class="text-6xl font-semibold text-white leading-tight max-w-4xl">
+       GUNA WIDYA PRAMESTI
     </h1>
     <div class="flex flex-row space-x-7 mt-11">
       <div class="w-56 ">
-        <a href="#" class="rounded-md bg-primary  px-7 py-4 text-base font-semibold text-white shadow-sm hover:-translate-y-1 transition-transform duration-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 block text-center">
-          DONASI
+        <a href="{{ url('/donation-form') }}" class="rounded-md bg-primary  px-7 py-4 text-base font-semibold text-white shadow-sm hover:-translate-y-1 transition-transform duration-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 block text-center">
+          DONASI ajg
         </a>
       </div>
     
@@ -166,28 +169,28 @@
                 <div class="flex gap-2 flex-wrap justify-center">
                   <div class="relative group">
                       <img class="w-40 h-40 object-cover transform transition-transform duration-300 group-hover:scale-105 group-hover:brightness-75" src="{{ asset('img/gambaranak.jpg') }}" alt="">
-                      <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                           <span class="text-md font-bold">Selengkapnya</span>
                       </div>
                   </div>
 
                   <div class="relative group">
                       <img class="w-72 max-h-40 object-cover transform transition-transform duration-300 group-hover:scale-105 group-hover:brightness-75" src="{{ asset('img/gambaranak.jpg') }}" alt="">
-                      <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                           <span class="text-xl font-bold">Selengkapnya</span>
                       </div>
                   </div>
 
                   <div class="relative group">
                       <img class="w-40 h-40 object-cover transform transition-transform duration-300 group-hover:scale-105 group-hover:brightness-75" src="{{ asset('img/gambaranak.jpg') }}" alt="">
-                      <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                           <span class="text-md font-bold">Selengkapnya</span>
                       </div>
                   </div>
 
                   <div class="relative group">
                       <img class="w-72 max-h-40 object-cover transform transition-transform duration-300 group-hover:scale-105 group-hover:brightness-75" src="{{ asset('img/gambaranak.jpg') }}" alt="">
-                      <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                           <span class="text-xl font-bold">Selengkapnya</span>
                       </div>
                   </div>
