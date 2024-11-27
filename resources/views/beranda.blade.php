@@ -6,9 +6,15 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <title>Halaman Baru</title>
+
+    
 </head>
 <body class="h-full">
-  <x-navbar></x-navbar>
+  <nav class="fixed top-0 left-0 w-full z-50 shadow-xl bg-transparent">
+    <x-navbar></x-navbar>
+  </nav>
+  
+ 
   {{-- hero section --}}
   <section 
   id="hero" 
@@ -18,7 +24,7 @@
   <!-- Overlay gelap -->
   <div class="absolute inset-0 bg-black bg-opacity-50 z-0"></div>
 
-  <div class="text-left pl-14 z-10"> <!-- Padding kiri dikurangi -->
+  <div class="text-left pl-14 mb-10 z-10"> <!-- Padding kiri dikurangi -->
     <h1 class="text-6xl font-semibold text-white leading-tight max-w-4xl">
       YAYASAN 
     </h1>
@@ -28,7 +34,7 @@
     <div class="flex flex-row space-x-7 mt-11">
       <div class="w-56 ">
         <a href="{{ url('/donation-form') }}" class="rounded-md bg-primary  px-7 py-4 text-base font-semibold text-white shadow-sm hover:-translate-y-1 transition-transform duration-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 block text-center">
-          DONASI ajg
+          DONASI
         </a>
       </div>
     
@@ -95,6 +101,8 @@
   </div>
   
 </section>
+
+
   <section  id="Galeri">
         <div class="h-10 min-w-full   bg-no-repeat bg-fixed bg-cover" style="background-image:url('{{ asset('img/gambaranak.jpg') }}')"></div>
           <div  class="relative isolate  px-6 pt-14  lg:px-8 bg-no-repeat bg-cover min-h-screen flex flex-col items-center justify-center">
@@ -361,7 +369,11 @@
   <section>
     
   </section>
-  <script src="{{ asset('js/main.js') }}"></script>
+  
+  <script>
+    
 
+  </script>
+  
 </body>
 </html>
