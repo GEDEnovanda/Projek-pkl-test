@@ -1,5 +1,28 @@
-@extends('Template.index-side')
-@section('conten-tabel')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Halaman Backoffice</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+  <div class="flex h-screen">
+    <!-- Sidebar -->
+    <div class="w-64 bg-gray-800 text-white flex flex-col">
+      <div class="p-4 text-2xl font-bold border-b border-gray-700">
+        Backoffice
+      </div>
+      <nav class="flex-1 p-4">
+        <a href="/Users" class="block py-2 px-4 rounded hover:bg-gray-700 text-xl font-medium">Donatur</a>
+        <a href="/Galeris/back-galeri" class="block py-2 px-4 rounded hover:bg-gray-700 text-xl font-medium">Galeri</a>
+        <a href="#" class="block py-2 px-4 rounded hover:bg-gray-700 text-xl font-medium">Settings</a>
+        <a href='logout' class="block py-2 px-4 rounded hover:bg-gray-700 text-xl font-medium">Logout</a>
+      </nav>
+    </div>
+
+    <!-- Main Content -->
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-12">
@@ -9,7 +32,7 @@
                 </div>
                 <div class="card border-0 shadow-sm rounded">
                     <div class="card-body">
-                        <a href="{{ route('Galeris.create') }}" class="btn btn-md btn-success mb-3">ADD Galeri</a>
+                        <a href="" class="btn btn-md btn-success mb-3">ADD Galeri</a>
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
@@ -20,7 +43,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse ($Galeris as $Galeri)
+                                @forelse ($allGalleries as $Galeri)
                                     <tr>
                                         <td class="text-center">
                                             <img src="{{ route('Galeris.image', $Galeri->image) }}" class="rounded" style="width: 150px">
@@ -45,7 +68,7 @@
                                 @endforelse
                             </tbody>
                         </table>
-                        {{ $Galeris->links() }}
+                        {{ $allGalleries->links() }}
                     </div>
                 </div>
             </div>
@@ -76,4 +99,8 @@
         @endif
 
     </script>
-@endsection
+  
+  </div>
+
+</body>
+</html>

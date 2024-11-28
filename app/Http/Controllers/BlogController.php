@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Galeri;
-use Carbon\Carbon as CarbonCarbon;
+use App\Models\Blog;
 use Illuminate\Http\Request;
+use Carbon\Carbon as CarbonCarbon;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 
-class GaleriController extends Controller
+class BlogController extends Controller
 {
-    /**
+     /**
      * index
      *
      * @return void
@@ -18,7 +18,7 @@ class GaleriController extends Controller
 
      public function showImage($filename)
      {
-         $path = storage_path('app/private/public/Galeris/' . $filename);
+         $path = storage_path('app/private/public/Blogs/' . $filename);
      
          if (!file_exists($path)) {
              abort(404); // Jika file tidak ditemukan, tampilkan halaman 404
@@ -33,17 +33,17 @@ class GaleriController extends Controller
 
     public function index() : View
     {
-        // Ambil semua data galeri, dengan pagination
-        $Galeris = Galeri::latest()->paginate(10);
+        // Ambil semua data Blog, dengan pagination
+        $Blogs = Blog::latest()->paginate(10);
 
-        // Iterasi melalui setiap galeri dan format tanggal
-        foreach ($Galeris as $Galeri) {
+        // Iterasi melalui setiap Blog dan format tanggal
+        foreach ($Blogs as $Blog) {
             // Format tanggal menggunakan Carbon
-            $Galeri->formatted_date = CarbonCarbon::parse($Galeri->tanggal)->format('d-m-Y');
+            $Blog->formatted_date = CarbonCarbon::parse($Blog->tanggal)->format('d-m-Y');
         }
 
-        // Render view dengan data galeri
-        return view('Galeris.index', compact('Galeris'));
+        // Render view dengan data Blog
+        return view('Blogs.index', compact('Blogs'));
     }
 
     /**
@@ -53,7 +53,7 @@ class GaleriController extends Controller
      */
     public function create(): View
     {
-        return view('Galeris.create');
+        return view('Blogs.create');
     }
 
     /**
@@ -63,25 +63,25 @@ class GaleriController extends Controller
      * @return RedirectResponse
      */
 
-    //  public function loadAllgaleri()
+    //  public function loadAllBlog()
     //  {
-    //      // Logic untuk mengambil data galeri
-    //      $allGalleries = Galeri::paginate(5); // Contoh jika menggunakan model Galeri
-    //      return view('back-galeri', compact('allGalleries'));
+    //      // Logic untuk mengambil data Blog
+    //      $allGalleries = Blog::paginate(5); // Contoh jika menggunakan model Blog
+    //      return view('back-Blog', compact('allGalleries'));
     //  }
 
-    //  public function loadAllgaleris()
+    //  public function loadAllBlogs()
     //  {
-    //      // Logic untuk mengambil data galeri
-    //      $allGalleries = Galeri::paginate(5); // Contoh jika menggunakan model Galeri
-    //      return view('Galeris.index', compact('allGalleries'));
+    //      // Logic untuk mengambil data Blog
+    //      $allGalleries = Blog::paginate(5); // Contoh jika menggunakan model Blog
+    //      return view('Blogs.index', compact('allGalleries'));
     //  }
 
     public function show($id)
     {
-        // Misalnya mengambil data galeri berdasarkan ID
-        $galeri = Galeri::findOrFail($id); // Pastikan Anda memiliki model Galeri
-        return view('galeri.show', compact('galeri'));
+        // Misalnya mengambil data Blog berdasarkan ID
+        $blog = Blog::findOrFail($id); // Pastikan Anda memiliki model Blog
+        return view('blog.show', compact('blog'));
     }
 
     public function store(Request $request): RedirectResponse
@@ -96,10 +96,10 @@ class GaleriController extends Controller
 
         // Upload image
         $image = $request->file('image');
-        $image->storeAs('public/Galeris', $image->hashName());
+        $image->storeAs('public/Blogs', $image->hashName());
 
-        // Create Galeri
-        Galeri::create([
+        // Create Blog
+        Blog::create([
             'image'         => $image->hashName(),
             'title'         => $request->title,
             'description'   => $request->description,
@@ -107,6 +107,6 @@ class GaleriController extends Controller
         ]);
 
         // Redirect to index
-        return redirect()->route('Galeris.index')->with(['success' => 'Data Berhasil Disimpan!']);
+        return redirect()->route('Blogs.index')->with(['success' => 'Data Berhasil Disimpan!']);
     }
 }

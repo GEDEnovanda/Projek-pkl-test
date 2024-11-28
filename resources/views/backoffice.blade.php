@@ -15,10 +15,10 @@
         Backoffice
       </div>
       <nav class="flex-1 p-4">
-        <a href="/Users" class="block py-2 px-4 rounded hover:bg-gray-700 text-xl font-medium">Donatur</a>
-        <a href="#" class="block py-2 px-4 rounded hover:bg-gray-700 text-xl font-medium">Profile</a>
+        <a href="/Backoffice" class="block py-2 px-4 rounded hover:bg-gray-700 text-xl font-medium">Donatur</a>
+        <a href="/" class="block py-2 px-4 rounded hover:bg-gray-700 text-xl font-medium">Galeri</a>
         <a href="#" class="block py-2 px-4 rounded hover:bg-gray-700 text-xl font-medium">Settings</a>
-        <a href="#" class="block py-2 px-4 rounded hover:bg-gray-700 text-xl font-medium">Logout</a>
+        <a href='logout' class="block py-2 px-4 rounded hover:bg-gray-700 text-xl font-medium">Logout</a>
       </nav>
     </div>
 

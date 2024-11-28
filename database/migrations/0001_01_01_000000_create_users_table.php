@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('phone_number')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->enum('role', ['donatur', 'pengasuh', 'anak_asuh','relawan','pengelola'])->default('donatur');
             $table->rememberToken();
             $table->timestamps();
         });

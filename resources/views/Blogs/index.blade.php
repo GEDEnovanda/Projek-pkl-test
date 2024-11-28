@@ -9,7 +9,7 @@
                 </div>
                 <div class="card border-0 shadow-sm rounded">
                     <div class="card-body">
-                        <a href="{{ route('Galeris.create') }}" class="btn btn-md btn-success mb-3">ADD Galeri</a>
+                        <a href="{{ route('Blogs.create') }}" class="btn btn-md btn-success mb-3">ADD Blog</a>
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
@@ -20,18 +20,18 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse ($Galeris as $Galeri)
+                                @forelse ($Blogs as $Blog)
                                     <tr>
                                         <td class="text-center">
-                                            <img src="{{ route('Galeris.image', $Galeri->image) }}" class="rounded" style="width: 150px">
+                                            <img src="{{ route('Blogs.image', $Blog->image) }}" class="rounded" style="width: 150px">
                                         </td>
-                                        <td>{{ $Galeri->title }}</td>
-                                        <td>{{ strip_tags($Galeri->description) }}</td>
-                                        <td>{{ $Galeri->formatted_date }}</td>
+                                        <td>{{ $Blog->title }}</td>
+                                        <td>{{ strip_tags($Blog->description) }}</td>
+                                        <td>{{ $Blog->formatted_date }}</td>
                                         <td class="text-center">
-                                            <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('Galeris.destroy', $Galeri->id) }}" method="POST">
-                                                <a href="{{ route('Galeris.show', $Galeri->id) }}" class="btn btn-sm btn-dark">SHOW</a>
-                                                <a href="{{ route('Galeris.edit', $Galeri->id) }}" class="btn btn-sm btn-primary">EDIT</a>
+                                            <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('Blogs.destroy', $Blog->id) }}" method="POST">
+                                                <a href="{{ route('Blogs.show', $Blog->id) }}" class="btn btn-sm btn-dark">SHOW</a>
+                                                <a href="{{ route('Blogs.edit', $Blog->id) }}" class="btn btn-sm btn-primary">EDIT</a>
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-sm btn-danger">HAPUS</button>
@@ -40,12 +40,12 @@
                                     </tr>
                                 @empty
                                     <div class="alert alert-danger">
-                                        Data Galeris belum Tersedia.
+                                        Data Blogs belum Tersedia.
                                     </div>
                                 @endforelse
                             </tbody>
                         </table>
-                        {{ $Galeris->links() }}
+                        {{ $Blogs->links() }}
                     </div>
                 </div>
             </div>
