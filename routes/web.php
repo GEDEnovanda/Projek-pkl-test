@@ -58,3 +58,10 @@ Route::middleware(['guest'])->group(function () {
 });
 
 
+use App\Http\Controllers\DonorController;
+
+Route::get('/donation-form', [DonorController::class, 'showForm'])->name('donation.form');
+Route::post('/donation-form', [DonorController::class, 'submitForm'])->name('donation.submit');
+Route::get('/donation-form', function () {
+    return view('donation-form');
+});
