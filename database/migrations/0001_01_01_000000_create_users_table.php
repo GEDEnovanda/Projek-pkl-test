@@ -18,7 +18,11 @@ return new class extends Migration
             $table->string('phone_number')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->enum('role', ['donatur', 'pengasuh', 'anak_asuh','relawan','pengelola'])->default('donatur');
+            $table->enum('role', ['donatur', 'pengasuh', 'anak_asuh', 'relawan', 'pengelola'])->default('donatur');
+            $table->enum('kategori_donatur', ['individu', 'lembaga'])->default('individu');
+            $table->enum('jenis_kelamin', ['laki-laki', 'perempuan'])->default('laki-laki');
+            $table->string('alamat')->nullable();
+            $table->date('tanggal_lahir')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

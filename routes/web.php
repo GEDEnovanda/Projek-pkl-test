@@ -41,7 +41,7 @@ Route::get('/products/image/{filename}', [ProductController::class, 'showImage']
     Route::middleware(['auth'])->group(function () {
     Route::get('/Users', [UserController::class, 'loadAllUsers']);
     Route::get('/Galeris/index', [GaleriController::class, 'index']);
-    Route::get('/Blogs/index', [GaleriController::class, 'index']);
+    Route::get('/Blogs/index', [BlogController::class, 'index']);
     Route::resource('/Galeris', \App\Http\Controllers\GaleriController::class);
     Route::get('/Galeris/image/{filename}', [GaleriController::class, 'showImage'])->name('Galeris.image');
     Route::resource('/Blogs', \App\Http\Controllers\BlogController::class);

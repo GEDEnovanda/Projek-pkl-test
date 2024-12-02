@@ -3,10 +3,6 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-12">
-                <div>
-                    <h3 class="text-center my-4">Data BackOffice</h3>
-                    <hr>
-                </div>
                 <div class="card border-0 shadow-sm rounded">
                     <div class="card-body">
                         <a href="{{ route('Blogs.create') }}" class="btn btn-md btn-success mb-3">ADD Blog</a>

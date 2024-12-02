@@ -7,6 +7,7 @@ use Carbon\Carbon as CarbonCarbon;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Storage;
 
 class GaleriController extends Controller
 {
@@ -62,26 +63,11 @@ class GaleriController extends Controller
      * @param  mixed $request
      * @return RedirectResponse
      */
-
-    //  public function loadAllgaleri()
-    //  {
-    //      // Logic untuk mengambil data galeri
-    //      $allGalleries = Galeri::paginate(5); // Contoh jika menggunakan model Galeri
-    //      return view('back-galeri', compact('allGalleries'));
-    //  }
-
-    //  public function loadAllgaleris()
-    //  {
-    //      // Logic untuk mengambil data galeri
-    //      $allGalleries = Galeri::paginate(5); // Contoh jika menggunakan model Galeri
-    //      return view('Galeris.index', compact('allGalleries'));
-    //  }
-
     public function show($id)
     {
         // Misalnya mengambil data galeri berdasarkan ID
-        $galeri = Galeri::findOrFail($id); // Pastikan Anda memiliki model Galeri
-        return view('galeri.show', compact('galeri'));
+        $Galeri = Galeri::findOrFail($id); // Pastikan Anda memiliki model Galeri
+        return view('Galeris.edit', compact('Galeri'));
     }
 
     public function store(Request $request): RedirectResponse
@@ -109,4 +95,54 @@ class GaleriController extends Controller
         // Redirect to index
         return redirect()->route('Galeris.index')->with(['success' => 'Data Berhasil Disimpan!']);
     }
+
+    /**
+     * update
+     *
+     * @param  mixed $request
+     * @param  mixed $id
+     * @return RedirectResponse
+     */
+    public function update(Request $request, $id): RedirectResponse
+{
+    // Validasi form tanpa atribut yang tidak ada
+    $request->validate([
+        'image'         => 'image|mimes:jpeg,jpg,png|max:2048',
+        'title'         => 'required|min:5',
+        'description'   => 'required|min:10',
+        'tanggal'       => 'required|date', // Menambahkan validasi tanggal
+    ]);
+
+    // Ambil galeri berdasarkan ID
+    $Galeri = Galeri::findOrFail($id);
+
+    // Periksa apakah ada gambar yang diunggah
+    if ($request->hasFile('image')) {
+        // Unggah gambar baru
+        $image = $request->file('image');
+        $image->storeAs('public/galeris', $image->hashName());
+
+        // Hapus gambar lama
+        Storage::delete('public/galeris/'.$Galeri->image);
+
+        // Update Galeri dengan gambar baru
+        $Galeri->update([
+            'image'         => $image->hashName(),
+            'title'         => $request->title,
+            'description'   => $request->description,
+            'tanggal'       => CarbonCarbon::parse($request->tanggal)->format('Y-m-d'), // Format tanggal
+        ]);
+    } else {
+        // Update Galeri tanpa gambar
+        $Galeri->update([
+            'title'         => $request->title,
+            'description'   => $request->description,
+            'tanggal'       => CarbonCarbon::parse($request->tanggal)->format('Y-m-d'), // Format tanggal
+        ]);
+    }
+
+    // Redirect ke halaman index
+    return redirect()->route('Galeris.index')->with(['success' => 'Data Berhasil Diubah!']);
+}
+
 }

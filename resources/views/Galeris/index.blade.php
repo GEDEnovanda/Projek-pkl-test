@@ -3,10 +3,6 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-12">
-                <div>
-                    <h3 class="text-center my-4">Data BackOffice</h3>
-                    <hr>
-                </div>
                 <div class="card border-0 shadow-sm rounded">
                     <div class="card-body">
                         <a href="{{ route('Galeris.create') }}" class="btn btn-md btn-success mb-3">ADD Galeri</a>
@@ -31,7 +27,7 @@
                                         <td class="text-center">
                                             <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('Galeris.destroy', $Galeri->id) }}" method="POST">
                                                 <a href="{{ route('Galeris.show', $Galeri->id) }}" class="btn btn-sm btn-dark">SHOW</a>
-                                                <a href="{{ route('Galeris.edit', $Galeri->id) }}" class="btn btn-sm btn-primary">EDIT</a>
+                                                <a href="{{ route('Galeris.update', $Galeri->id) }}" class="btn btn-sm btn-primary">EDIT</a>
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-sm btn-danger">HAPUS</button>

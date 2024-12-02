@@ -33,6 +33,6 @@ class Sesicontroller extends Controller
     function logout()
     {
         Auth::logout();
-        return redirect('yayasan-backoffice');
+        return redirect('/');
     }
 }
